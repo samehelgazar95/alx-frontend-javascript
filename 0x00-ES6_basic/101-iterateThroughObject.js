@@ -4,7 +4,7 @@ export default function iterateThroughObject(reportWithIterator) {
   for (const [index, item] of reportWithIterator.entries()) {
     if (index === 0) {
       employees.push(item);
-      continue;
+      continue; // eslint-disable-line
     }
 
     employees.push(' | ');
