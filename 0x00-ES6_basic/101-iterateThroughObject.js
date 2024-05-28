@@ -11,5 +11,5 @@ export default function iterateThroughObject(reportWithIterator) {
     employees.push(item);
   }
 
-  console.log(employees.join(''));
+  return employees.join('');
 }
