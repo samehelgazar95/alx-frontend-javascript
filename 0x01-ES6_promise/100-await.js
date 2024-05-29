@@ -8,7 +8,7 @@ export default async function asyncUploadUser() {
       if (ele.status === 'fulfilled') {
         if (index === 0) finalResponses.photo = ele.value;
         else if (index === 1) finalResponses.user = ele.value;
-=      } else {
+      } else {
         if (index === 0) finalResponses.photo = null;
         else if (index === 1) finalResponses.user = null;
       }
