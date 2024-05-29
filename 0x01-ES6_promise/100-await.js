@@ -5,12 +5,12 @@ export default async function asyncUploadUser() {
 
   await Promise.allSettled([uploadPhoto(), createUser()]).then((result) =>
     result.map((ele, index) => {
-      if (index === 0) {
-        if (ele.status != 'fulfilled') finalResponses.photo = null;
-        else finalResponses.photo = ele.value;
-      } else if (index === 1) {
-        if (ele.status != 'fulfilled') finalResponses.user = null;
-        else finalResponses.user = ele.value;
+      if (ele.status === 'fulfilled') {
+        if (index === 0) finalResponses.photo = ele.value;
+        else if (index === 1) finalResponses.user = ele.value;
+=      } else {
+        if (index === 0) finalResponses.photo = null;
+        else if (index === 1) finalResponses.user = null;
       }
     }),
   );
