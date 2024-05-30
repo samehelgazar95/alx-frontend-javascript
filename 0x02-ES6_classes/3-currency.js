@@ -5,17 +5,18 @@ class Currency {
     this._code = code;
     this._name = name;
   }
+
   static checkString(value) {
     if (typeof value !== 'string') throw new TypeError();
   }
 
   set code(val) {
-    checkString(val);
+    Currency.checkString(val);
     this._code = val;
   }
 
   set name(val) {
-    checkString(val);
+    Currency.checkString(val);
     this._name = val;
   }
 
@@ -23,10 +24,13 @@ class Currency {
     return this._code;
   }
 
-  get name () {
+  get name() {
     return this._name;
   }
 
+  displayFullCurrency() {
+    return `${this._name} ${this._code}`;
+  }
 }
 
 export default Currency;
