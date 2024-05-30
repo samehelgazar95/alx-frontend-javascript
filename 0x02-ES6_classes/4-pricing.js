@@ -24,7 +24,7 @@ class Pricing {
 
   set currency(val) {
     Pricing.isCurrency(val);
-    this.currency = val;
+    this._currency = val;
   }
 
   get amount() {
@@ -32,7 +32,7 @@ class Pricing {
   }
 
   get currency() {
-    return this.currency;
+    return this._currency;
   }
 
   displayFullPrice() {
