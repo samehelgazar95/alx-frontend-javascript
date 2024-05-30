@@ -9,16 +9,17 @@ class HolbertonCourse {
   }
 
   static checkName(name) {
-    if (typeof name != 'string') throw new TypeError('Name must be a string');
+    if (typeof name !== 'string') throw new TypeError('Name must be a string');
   }
 
   static checkLength(len) {
-    if (typeof len != 'number') throw new TypeError('Length must be a number');
+    if (typeof len !== 'number') throw new TypeError('Length must be a number');
   }
 
   static checkStudents(students) {
-    if (!Array.isArray(students))
+    if (!Array.isArray(students)) {
       throw new TypeError('Students must be an Array');
+    }
   }
 
   set name(value) {
@@ -46,15 +47,6 @@ class HolbertonCourse {
 
   get students() {
     return this._students;
-  }
-
-  toString() {
-    return `
-    HolbertonCourse {
-        _name: '${this.name}',
-        _length: ${this.length},
-        _students: ${JSON.stringify(this.students)}
-    }`;
   }
 }
 
