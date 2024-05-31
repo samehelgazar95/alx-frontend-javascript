@@ -11,11 +11,7 @@ class Airport {
   }
 
   get [Symbol.toStringTag]() {
-    return `${this._code}`;
-  }
-
-  toString() {
-    return `[Object ${this._code}]`;
+    return this._code;
   }
 }
 
