@@ -10,6 +10,10 @@ class Airport {
     if (typeof val !== 'string') throw new TypeError();
   }
 
+  get [Symbol.toStringTag]() {
+    return `${this._code}`;
+  }
+
   toString() {
     return `[Object ${this._code}]`;
   }
