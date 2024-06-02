@@ -11,9 +11,9 @@ export class HolbertonClass {
   get location() {
     return this._location;
   }
-  
+
   static [Symbol.hasInstance](leftHand) {
-    return typeof leftHand === this;
+    return leftHand instanceof this;
   }
 }
 
@@ -37,7 +37,7 @@ export class StudentHolberton {
   }
 
   static [Symbol.hasInstance](leftHand) {
-    return typeof leftHand === this;
+    return leftHand instanceof this;
   }
 }
 
