@@ -11,10 +11,6 @@ export class HolbertonClass {
   get location() {
     return this._location;
   }
-
-  static [Symbol.hasInstance](leftHand) {
-    return leftHand instanceof this;
-  }
 }
 
 export class StudentHolberton {
@@ -34,10 +30,6 @@ export class StudentHolberton {
 
   get fullStudentDescription() {
     return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
-  }
-
-  static [Symbol.hasInstance](leftHand) {
-    return leftHand instanceof this;
   }
 }
 
