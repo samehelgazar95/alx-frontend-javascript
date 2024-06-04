@@ -1,13 +1,16 @@
 function cleanSet(set, str) {
   const res = [];
 
-  for (const val of set) {
-    if (str && val.startsWith(str)) {
-      res.push(val.slice(str.length));
+  if (str) {
+    for (const val of set) {
+      if (val.toLowerCase().startsWith(str.toLowerCase())) {
+        res.push(val.slice(str.length));
+      }
     }
+    return res.join('-');
   }
 
-  return res.join('-');
+  return res.join('');
 }
 
 export default cleanSet;
