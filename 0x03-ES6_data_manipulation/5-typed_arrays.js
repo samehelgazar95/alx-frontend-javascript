@@ -6,7 +6,6 @@ function createInt8TypedArray(length, position, value) {
   else typedInt8[position] = value;
 
   const view = new DataView(buffer);
-
   return view;
 }
 
