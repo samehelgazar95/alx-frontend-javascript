@@ -4,7 +4,7 @@ function cleanSet(set, str) {
   if (typeof str !== 'string' || str === '') return '';
 
   for (const val of set) {
-    if (val.toLowerCase().startsWith(str.toLowerCase())) {
+    if (typeof val === 'string' && val.toLowerCase().startsWith(str.toLowerCase()) {
       res.push(val.slice(str.length));
     }
   }
